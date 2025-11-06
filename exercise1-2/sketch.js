@@ -9,13 +9,10 @@ function setup() {
 }
 
 function draw() {
-    x = starX.length
-    y = starY.length
-    for (let i = 0; i < starY.length; i++) {
-        star()
-        starY.push(y)
+    x = starX[starX.length]
+    y = starY[starY.length]
+    star()
 
-    }
 
 
 
@@ -40,6 +37,8 @@ function star(x, y) {
 function mouseClicked() {
     starX.push(mouseX)
     starY.push(mouseY)
+    x = starX[starX.length]
+    y = starY[starY.length]
     console.log(y)
 
 }
