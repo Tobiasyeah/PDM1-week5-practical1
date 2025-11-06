@@ -1,5 +1,7 @@
 let starX = []
 let starY = []
+let x = starX
+let y = starY
 
 function setup() {
     createCanvas(400, 400)
@@ -7,9 +9,14 @@ function setup() {
 }
 
 function draw() {
-    for (i = 0; i < 400; i++) {
+    x = starX
+    y = starY
+    for (let i = starY; i > starY.length; i++) {
         star()
+        starY.push(y)
+
     }
+
 
 
 
@@ -17,7 +24,7 @@ function draw() {
 
 /**
  * Draws a star at the given coordinates.
- * @param {number} x 
+ * @param {number} x
  * @param {number} y 
  */
 function star(x, y) {
@@ -33,5 +40,6 @@ function star(x, y) {
 function mouseClicked() {
     starX.push(mouseX)
     starY.push(mouseY)
+    console.log(y)
 
 }
