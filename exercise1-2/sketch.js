@@ -9,9 +9,9 @@ function setup() {
 }
 
 function draw() {
-    x = starX
-    y = starY
-    for (let i = starY; i > starY.length; i++) {
+    x = starX.length
+    y = starY.length
+    for (let i = 0; i < starY.length; i++) {
         star()
         starY.push(y)
 
