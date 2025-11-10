@@ -18,7 +18,6 @@ function draw() {
 }
 
 function mouseClicked() {
-    newColour = colourVals[colourVals.length]
     colourVals.unshift(colourVals[3])
     colourVals.pop()
     console.log(colourVals)

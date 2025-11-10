@@ -1,23 +1,14 @@
 let starX = []
 let starY = []
-let x = starX
-let y = starY
+let gX = 200
+let gY = 200
 
 function setup() {
     createCanvas(400, 400)
-    background(50, 75, 255)
-}
-
-function draw() {
-    x = starX[starX.length]
-    y = starY[starY.length]
-    star()
-
-
-
-
 
 }
+
+
 
 /**
  * Draws a star at the given coordinates.
@@ -34,11 +25,20 @@ function star(x, y) {
     triangle(x, y + 10, x + 20, y - 5, x + 35, y + 30);
 }
 
+function draw() {
+    background(50, 75, 255)
+    for (let i = 0; i < starY.length; i++) {
+        star(starX[i], starY[i])
+        console.log(`i=${i} starY[${i}] is ${starY[i]}`)
+        starY[i] += 2
+    }
+    console.log('For loop finished')
+}
+
 function mouseClicked() {
     starX.push(mouseX)
     starY.push(mouseY)
-    x = starX[starX.length]
-    y = starY[starY.length]
-    console.log(y)
+    console.log(starY)
+
 
 }
